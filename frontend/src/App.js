@@ -5,7 +5,7 @@ import React from "react"
 
 import Header from "./components/Layout/Header/Header.js"
 import Footer from "./components/Layout/Footer/Footer.js"
-import Home from "./components/Layout/Home/Home.js"
+import Home from "./components/Home/Home.js"
 
 function App() {
   React.useEffect(() => {
