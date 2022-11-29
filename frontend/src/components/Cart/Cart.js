@@ -5,12 +5,12 @@ import { Typography } from "@material-ui/core"
 import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart"
 
 import CartItemCard from "./CartItemCard.js"
-
-import "./Cart.css"
 import {
   addItemsToCart,
   removeItemFromCart,
 } from "../../actions/cartActions.js"
+
+import "./Cart.css"
 
 const Cart = () => {
   const dispatch = useDispatch()

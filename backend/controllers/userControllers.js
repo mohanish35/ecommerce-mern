@@ -5,6 +5,7 @@ import sendToken from "../utils/jwtToken.js"
 import sendEmail from "../utils/sendEmail.js"
 import crypto from "crypto"
 
+// register a user
 export const registerUser = catchAsyncErrors(async (req, res, next) => {
   const { name, email, password } = req.body
   const user = await User.create({
@@ -20,6 +21,7 @@ export const registerUser = catchAsyncErrors(async (req, res, next) => {
   sendToken(user, 201, res)
 })
 
+// login user
 export const loginUser = catchAsyncErrors(async (req, res, next) => {
   const { email, password } = req.body
 
@@ -42,6 +44,7 @@ export const loginUser = catchAsyncErrors(async (req, res, next) => {
   sendToken(user, 200, res)
 })
 
+// logout user
 export const logoutUser = async (req, res, next) => {
   res.cookie("token", null, {
     expires: new Date(Date.now()),
@@ -54,6 +57,7 @@ export const logoutUser = async (req, res, next) => {
   })
 }
 
+// forgot password
 export const forgotPassword = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findOne({ email: req.body.email })
 
@@ -92,6 +96,7 @@ export const forgotPassword = catchAsyncErrors(async (req, res, next) => {
   }
 })
 
+// reset password
 export const resetPassword = catchAsyncErrors(async (req, res, next) => {
   const resetPasswordToken = crypto
     .createHash("sha256")
@@ -122,6 +127,7 @@ export const resetPassword = catchAsyncErrors(async (req, res, next) => {
   sendToken(user, 200, res)
 })
 
+// get user details
 export const getUserDetails = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findById(req.user.id)
 
@@ -131,6 +137,7 @@ export const getUserDetails = catchAsyncErrors(async (req, res, next) => {
   })
 })
 
+// update password
 export const updatePassword = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findById(req.user.id).select("+password")
 
@@ -151,6 +158,7 @@ export const updatePassword = catchAsyncErrors(async (req, res, next) => {
   sendToken(user, 200, res)
 })
 
+// update user profile
 export const updateUserProfile = catchAsyncErrors(async (req, res, next) => {
   const newUserData = {
     name: req.body.name,
@@ -169,6 +177,7 @@ export const updateUserProfile = catchAsyncErrors(async (req, res, next) => {
   })
 })
 
+// get all users -- ADMIN
 export const getAllUsers = catchAsyncErrors(async (req, res, next) => {
   const users = await User.find()
 
@@ -178,6 +187,7 @@ export const getAllUsers = catchAsyncErrors(async (req, res, next) => {
   })
 })
 
+// get a single user -- ADMIN
 export const getSingleUser = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findById(req.params.id)
 
@@ -191,6 +201,7 @@ export const getSingleUser = catchAsyncErrors(async (req, res, next) => {
   })
 })
 
+// update user role -- ADMIN
 export const updateUserRole = catchAsyncErrors(async (req, res, next) => {
   const newUserData = {
     name: req.body.name,
@@ -209,6 +220,7 @@ export const updateUserRole = catchAsyncErrors(async (req, res, next) => {
   })
 })
 
+// delete a user -- ADMIN
 export const deleteUser = catchAsyncErrors(async (req, res, next) => {
   const user = User.findById(req.params.id)
 

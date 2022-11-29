@@ -15,7 +15,7 @@ process.on("uncaughtException", (error) => {
 
 // Config
 if (process.env.NODE_ENV !== "PRODUCTION") {
-  dotenv.config({ path: "backend/config/config.env" });
+  dotenv.config({ path: "backend/config/config.env" })
 }
 
 // connect DB
@@ -24,9 +24,7 @@ connectDatabase()
 const port = process.env.PORT
 
 const server = app.listen(port, () => {
-  console.log(
-    `🚀 Server started on host '${os.hostname()}' on port '${port}'`
-  )
+  console.log(`🚀 Server started on host '${os.hostname()}' on port '${port}'`)
 })
 
 // Unhandled Promise Rejection

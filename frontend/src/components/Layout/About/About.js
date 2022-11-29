@@ -5,8 +5,8 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import InstagramIcon from "@mui/icons-material/Instagram"
 
 const About = () => {
-  const visitInstagram = () => {
-    window.location = "https://instagram.com/mohanish_96"
+  const visitLinkedIn = () => {
+    window.location = "https://www.linkedin.com/in/mohanish-mankar-695055140/"
   }
   return (
     <div className="aboutSection">
@@ -23,12 +23,10 @@ const About = () => {
               alt="Founder"
             />
             <Typography>Mohanish Mankar</Typography>
-            <Button onClick={visitInstagram} color="primary">
-              Visit Instagram
+            <Button onClick={visitLinkedIn} color="primary">
+              Visit LinkedIn
             </Button>
-            <span>
-              This is a sample wesbite made by Mohanish Mankar.
-            </span>
+            <span>This is a sample wesbite made by Mohanish Mankar.</span>
           </div>
           <div className="aboutSectionContainer2">
             <Typography component="h2">Our Brands</Typography>

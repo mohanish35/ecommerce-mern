@@ -88,6 +88,7 @@ export const deleteProduct = catchAsyncError(async (req, res, next) => {
   })
 })
 
+// create product review
 export const createProductReview = catchAsyncError(async (req, res, next) => {
   const { rating, comment, productId } = req.body
   const review = {
@@ -131,6 +132,7 @@ export const createProductReview = catchAsyncError(async (req, res, next) => {
   })
 })
 
+// get all reviews of a product
 export const getProductReviews = catchAsyncError(async (req, res, next) => {
   const product = await Product.findById(req.query.id)
 
@@ -144,6 +146,7 @@ export const getProductReviews = catchAsyncError(async (req, res, next) => {
   })
 })
 
+// delete a product review
 export const deleteProductReview = catchAsyncError(async (req, res, next) => {
   const product = await Product.findById(req.query.productId)
 

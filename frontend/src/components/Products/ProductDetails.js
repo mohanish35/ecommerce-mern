@@ -7,9 +7,10 @@ import { useAlert } from "react-alert"
 
 import ReviewCard from "./ReviewCard.js"
 import { clearErrors, getProductDetails } from "../../actions/productActions"
-import "./ProductDetails.css"
 import Loader from "../Layout/Loader/Loader.js"
 import { addItemsToCart } from "../../actions/cartActions"
+
+import "./ProductDetails.css"
 
 const ProductDetails = () => {
   const dispatch = useDispatch()

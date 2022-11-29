@@ -1,6 +1,6 @@
-import React from "react";
-import { ReactNavbar } from "overlay-navbar";
-import logo from "../../../images/logo.png";
+import React from "react"
+import { ReactNavbar } from "overlay-navbar"
+import logo from "../../../images/logo.png"
 
 const options = {
   burgerColor: "lightgrey",
@@ -34,11 +34,11 @@ const options = {
   searchIconColorHover: "#eb4034",
   cartIconColorHover: "#eb4034",
   cartIconMargin: "1vmax",
-  searchIconElement: "../../../images/logo.png"
-};
+  searchIconElement: "../../../images/logo.png",
+}
 
 const Header = () => {
-  return <ReactNavbar {...options} />;
-};
+  return <ReactNavbar {...options} />
+}
 
-export default Header;
+export default Header
