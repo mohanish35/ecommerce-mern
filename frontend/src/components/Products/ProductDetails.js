@@ -39,7 +39,6 @@ const ProductDetails = () => {
   const [quantity, setQuantity] = useState(1)
 
   const increaseQuantity = () => {
-    console.log(product.Stock)
     if (quantity >= 5) return
 
     const qty = quantity + 1
@@ -101,7 +100,7 @@ const ProductDetails = () => {
             <p>
               Status:{" "}
               <b className={product.Stock < 1 ? "redColor" : "greenColor"}>
-                {product.Stock < 1 ? "OutOfStock" : "InStock"}
+                {product.stock < 1 ? "OutOfStock" : "InStock"}
               </b>
             </p>
           </div>

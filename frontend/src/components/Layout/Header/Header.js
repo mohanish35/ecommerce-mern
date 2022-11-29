@@ -3,6 +3,7 @@ import { ReactNavbar } from "overlay-navbar";
 import logo from "../../../images/logo.png";
 
 const options = {
+  burgerColor: "lightgrey",
   burgerColorHover: "#eb4034",
   logo,
   logoWidth: "20vmax",
@@ -33,6 +34,7 @@ const options = {
   searchIconColorHover: "#eb4034",
   cartIconColorHover: "#eb4034",
   cartIconMargin: "1vmax",
+  searchIconElement: "../../../images/logo.png"
 };
 
 const Header = () => {

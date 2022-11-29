@@ -21,10 +21,6 @@ const productSchema = new mongoose.Schema({
   },
   images: [
     {
-      public_id: {
-        type: String,
-        required: true,
-      },
       url: {
         type: String,
         required: true,
@@ -35,7 +31,11 @@ const productSchema = new mongoose.Schema({
     type: String,
     require: [true, "Please enter product category"],
   },
-  Stock: {
+  sku: {
+    type: String,
+    require: [true, "Please enter product category"],
+  },
+  stock: {
     type: Number,
     required: [true, "Please enter product Stock"],
     maxLength: [4, "Invalid stock count"],

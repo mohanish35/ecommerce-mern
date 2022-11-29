@@ -13,13 +13,15 @@ import MetaData from "../Layout/MetaData.js"
 import "./Products.css"
 
 const categories = [
-  "Laptop",
+  "Accessories",
+  "Bikinis",
+  "Children's T-Shirts",
+  "Dresses",
   "Footwear",
-  "Bottom",
+  "Hoodies",
+  "Skirts",
+  "T-shirts",
   "Tops",
-  "Attire",
-  "Camera",
-  "SmartPhones",
 ]
 
 const Products = () => {
@@ -38,7 +40,7 @@ const Products = () => {
   const setCurrentPageNo = (e) => {
     setCurrentPage(e)
   }
-  const [price, setPrice] = useState([0, 25000])
+  const [price, setPrice] = useState([0, 500])
   const [category, setCategory] = useState("")
   const [ratings, setRatings] = useState(0)
 
@@ -65,6 +67,7 @@ const Products = () => {
         <Fragment>
           <MetaData title="PRODUCTS -- ECOMMERCE" />
           <h2 className="productsHeading">Products</h2>
+
           <div className="products">
             {products &&
               products.map((product) => (
@@ -79,21 +82,27 @@ const Products = () => {
                 valueLabelDisplay="auto"
                 aria-labelledby="range-slider"
                 min={0}
-                max={2500}
+                max={500}
               />
 
               <Typography>Categories</Typography>
               <ul className="categoryBox">
-                {categories.map((category) => (
+                {categories.map((cat) => (
                   <li
-                    className="category-link"
+                    className={`category-link ${
+                      cat === category ? "selected-category" : ""
+                    }`}
                     key={category}
                     onClick={() => {
                       setCurrentPage(1)
-                      setCategory(category)
+                      if (cat === category) {
+                        setCategory("")
+                      } else {
+                        setCategory(cat)
+                      }
                     }}
                   >
-                    {category}
+                    {cat}
                   </li>
                 ))}
               </ul>

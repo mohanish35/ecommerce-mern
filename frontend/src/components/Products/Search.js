@@ -12,9 +12,10 @@ const Search = () => {
 
     if (keyword.trim()) {
       navigate(`/products/${keyword}`)
-    } else {
-      navigate("/products")
     } 
+    // else {
+    //   navigate("/products")
+    // } 
   }
 
   return (

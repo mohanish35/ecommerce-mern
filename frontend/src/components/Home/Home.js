@@ -23,7 +23,7 @@ const Home = () => {
       dispatch(clearErrors())
     }
     dispatch(getProducts())
-  }, [dispatch, error, alert])
+  }, [dispatch, alert, error])
 
   return (
     <Fragment>

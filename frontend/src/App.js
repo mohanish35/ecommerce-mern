@@ -11,6 +11,7 @@ import Cart from "./components/Cart/Cart.js"
 import Search from "./components/Products/Search.js"
 import ProductDetails from "./components/Products/ProductDetails.js"
 import About from "./components/Layout/About/About.js"
+import NotFound from "./components/NotFound/NotFound.js"
 
 function App() {
   React.useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
         <Route exact path="/search" element={<Search />} />
         <Route exact path="/cart" element={<Cart />} />
         <Route exact path="/about-us" element={<About />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>
