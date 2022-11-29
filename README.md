@@ -2,9 +2,9 @@
 
 # Install Dependencies
 
-**Backend** - `npm i`
+**Backend** - >`npm i`
 
-**Frontend** - `cd frontend` ` npm i`
+**Frontend** - >`cd ./frontend` >` npm i`
 
 ## Env Variables
 
