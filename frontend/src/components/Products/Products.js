@@ -31,7 +31,7 @@ const Products = () => {
     products,
     loading,
     error,
-    productsCount,
+    // productsCount,
     resultsPerPage,
     filteredProductsCount,
   } = useSelector((state) => state.products)
@@ -118,7 +118,7 @@ const Products = () => {
                 <Pagination
                   activePage={currentPage}
                   itemsCountPerPage={resultsPerPage}
-                  totalItemsCount={productsCount}
+                  totalItemsCount={count}
                   onChange={setCurrentPageNo}
                   nextPageText="Next"
                   prevPageText="Prev"

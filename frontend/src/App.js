@@ -10,6 +10,7 @@ import Products from "./components/Products/Products.js"
 import Cart from "./components/Cart/Cart.js"
 import Search from "./components/Products/Search.js"
 import ProductDetails from "./components/Products/ProductDetails.js"
+import About from "./components/Layout/About/About.js"
 
 function App() {
   React.useEffect(() => {
@@ -30,6 +31,7 @@ function App() {
         <Route exact path="/products/:keyword" element={<Products />} />
         <Route exact path="/search" element={<Search />} />
         <Route exact path="/cart" element={<Cart />} />
+        <Route exact path="/about-us" element={<About />} />
       </Routes>
       <Footer />
     </Router>
