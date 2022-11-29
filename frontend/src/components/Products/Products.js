@@ -41,7 +41,7 @@ const Products = () => {
   const setCurrentPageNo = (e) => {
     setCurrentPage(e)
   }
-  const [price, setPrice] = useState([0, 500])
+  const [price, setPrice] = useState([0, 100])
   const [category, setCategory] = useState("")
   const [ratings, setRatings] = useState(0)
 
@@ -91,7 +91,7 @@ const Products = () => {
                 valueLabelDisplay="auto"
                 aria-labelledby="range-slider"
                 min={0}
-                max={500}
+                max={100}
               />
 
               <Typography>Categories</Typography>
