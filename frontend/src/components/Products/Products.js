@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom"
 import Pagination from "react-js-pagination"
 import { useAlert } from "react-alert"
 import { Slider, Typography } from "@material-ui/core"
+import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 
 import { clearErrors, getProducts } from "../../actions/productActions"
 import ProductCard from "../Home/ProductCard.js"
@@ -69,10 +70,18 @@ const Products = () => {
           <h2 className="productsHeading">Products</h2>
 
           <div className="products">
-            {products &&
+            {products && products.length ? (
               products.map((product) => (
                 <ProductCard key={product._id} product={product} />
-              ))}
+              ))
+            ) : (
+              <div className="noProductsFound">
+                <ProductionQuantityLimitsIcon />
+
+                <Typography>No Products Found :(</Typography>
+                <Typography>Try Different Filters?</Typography>
+              </div>
+            )}
 
             <div className="filterBox">
               <Typography component="legend">Price</Typography>
