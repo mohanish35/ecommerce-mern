@@ -83,7 +83,7 @@ const Cart = () => {
                     </button>
                   </div>
                   <p className="cartSubtotal">{`$${
-                    item.price * item.quantity
+                    (item.price * item.quantity).toFixed(2)
                   }`}</p>
                 </div>
               ))}
@@ -94,7 +94,7 @@ const Cart = () => {
                 <p>{`$${cartItems.reduce(
                   (acc, item) => acc + item.quantity * item.price,
                   0
-                )}`}</p>
+                ).toFixed(2)}`}</p>
               </div>
               <div></div>
               <div className="checkOutBtn">
