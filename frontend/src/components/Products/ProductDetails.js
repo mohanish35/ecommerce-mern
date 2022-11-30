@@ -72,6 +72,10 @@ const ProductDetails = () => {
                   key={item.url}
                   src={item.url}
                   alt={`${idx} Slide`}
+                  onError={({ currentTarget }) => {
+                    currentTarget.onerror = null // prevents looping
+                    currentTarget.src = "https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101028/pavelstasevich181101028.jpg"
+                  }}
                 />
               )
             })}

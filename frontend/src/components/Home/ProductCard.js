@@ -14,7 +14,14 @@ const ProductCard = ({ product }) => {
 
   return (
     <Link className="productCard" to={`/product/${product._id}`}>
-      <img src={product.images[0].url} alt={product.name} />
+      <img
+        src={product.images[0].url}
+        alt="dominant color placeholder"
+        onError={({ currentTarget }) => {
+          currentTarget.onerror = null // prevents looping
+          currentTarget.src = "https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101028/pavelstasevich181101028.jpg"
+        }}
+      />
       <p>{product.name}</p>
       <div>
         <ReactStars {...options} />{" "}
