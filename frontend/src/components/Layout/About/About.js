@@ -19,7 +19,7 @@ const About = () => {
           <div>
             <Avatar
               style={{ width: "10vmax", height: "10vmax", margin: "2vmax 0" }}
-              src="https://media-exp1.licdn.com/dms/image/C4E03AQEkZs_VdUMr3w/profile-displayphoto-shrink_800_800/0/1594814518067?e=1675296000&v=beta&t=FhekeoKw4K64DQxcFEFbPRFl3qeFbp3eEOuiaIDrMGA"
+              src="https://iili.io/HfneGjt.md.jpg"
               alt="Founder"
             />
             <Typography>Mohanish Mankar</Typography>

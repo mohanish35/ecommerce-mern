@@ -81,7 +81,8 @@
 
 .productCard > img {
   width: 14vmax;
-  flex: 1
+  flex: 1;
+  object-fit: cover;
 }
 
 .productCard > div {
